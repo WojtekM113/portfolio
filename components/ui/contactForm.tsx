@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
-import { Button} from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Textarea } from "./textarea"; // Adjust imports to your project structure
 import {
   AlertDialog,
@@ -48,7 +48,10 @@ export default function ContactForm() {
 
         <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-gray-700"
+            >
               Your Message
             </label>
             <Textarea

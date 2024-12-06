@@ -26,7 +26,9 @@ export default function SkillsSection() {
                 <CardTitle>Game Engines</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm">Experienced with Unity and Unreal Engine.</p>
+                <p className="text-sm">
+                  Experienced with Unity and Unreal Engine.
+                </p>
               </CardContent>
             </Card>
 
@@ -36,7 +38,9 @@ export default function SkillsSection() {
                 <CardTitle>Problem Solving</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm">Strong analytical and debugging skills.</p>
+                <p className="text-sm">
+                  Strong analytical and debugging skills.
+                </p>
               </CardContent>
             </Card>
           </div>

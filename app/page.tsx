@@ -21,7 +21,9 @@ import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 
 export default function Home() {
   return (
-    <div className="w-full overflow-x-hidden"> {/* Ensure no horizontal scrolling */}
+    <div className="w-full overflow-x-hidden">
+      {" "}
+      {/* Ensure no horizontal scrolling */}
       {/* Sticky Navigation */}
       <div className="sticky top-0 w-full bg-white shadow-md z-50">
         <NavigationMenu>
@@ -53,7 +55,6 @@ export default function Home() {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-
       {/* Main Content */}
       <main>
         {/* Home Section */}
@@ -76,7 +77,11 @@ export default function Home() {
                 <CardWithPicture title="1" description="1" content="1" />
               </CarouselItem>
               <CarouselItem>
-                <CardWithPicture title="hello" description="hello" content="hello" />
+                <CardWithPicture
+                  title="hello"
+                  description="hello"
+                  content="hello"
+                />
               </CarouselItem>
               <CarouselItem>
                 <CardWithPicture title="3" description="3" content="3" />
@@ -91,7 +96,10 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="h-screen flex items-center justify-center">
+        <section
+          id="projects"
+          className="h-screen flex items-center justify-center"
+        >
           <h2 className="text-2xl font-bold">Projects Section</h2>
           <p className="text-center">Here are some of my projects.</p>
         </section>
