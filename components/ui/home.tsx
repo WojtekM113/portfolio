@@ -1,10 +1,7 @@
-// File: components/Home.tsx
-import { Terminal } from "lucide-react";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+ 
+import { Card, CardContent,    CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
-
-import { ContactForm } from "@/components/ui/contactForm"; 
+import ContactForm from "@/components/ui/contactForm"
 export function Home() {
   return (
     <div className="   flex flex-col justify-center sm:flex-row gap-2 w-full p-4">

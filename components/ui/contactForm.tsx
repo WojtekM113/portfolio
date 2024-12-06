@@ -1,28 +1,33 @@
-// components/ui/contact-form-modal.tsx
-"use client";
-
+import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
-import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogAction, AlertDialogCancel } from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { Button} from "@/components/ui/button";
+import { Textarea } from "./textarea"; // Adjust imports to your project structure
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
-const FormSchema = z.object({
-  message: z.string().min(10, {
-    message: "Message must be at least 10 characters.",
-  }),
-});
+// Define the structure of the form data
+interface FormValues {
+  message: string;
+}
 
-export function ContactForm() {
+export default function ContactForm() {
   const [isOpen, setIsOpen] = useState(false);
-  const form = useForm({
-    resolver: zodResolver(FormSchema),
+
+  // Initialize useForm with the explicit type
+  const form = useForm<FormValues>({
+    defaultValues: {
+      message: "",
+    },
   });
 
-  const handleSubmit = (data: any) => {
-    // Handle form submission logic here (e.g., send message)
+  // Define the handleSubmit function with the same type
+  const handleSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data);
     setIsOpen(false); // Close the dialog after submission
   };
@@ -43,18 +48,17 @@ export function ContactForm() {
 
         <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
           <div>
-            <label htmlFor="message">Your Message</label>
-            <Textarea id="message" {...form.register("message")} rows={4} />
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+              Your Message
+            </label>
+            <Textarea
+              id="message"
+              {...form.register("message", { required: "Message is required" })}
+              rows={4}
+              className="mt-1 block w-full"
+            />
           </div>
-
-          <div className="flex justify-between space-x-2">
-            <AlertDialogCancel asChild>
-              <Button variant="outline">Cancel</Button>
-            </AlertDialogCancel>
-            <AlertDialogAction asChild>
-              <Button type="submit">Send Message</Button>
-            </AlertDialogAction>
-          </div>
+          <Button type="submit">Send</Button>
         </form>
       </AlertDialogContent>
     </AlertDialog>
