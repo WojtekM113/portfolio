@@ -1,23 +1,20 @@
 
 "use client";
-import Image from "next/image";
+ 
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
+ 
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
+  
 } from "@/components/ui/navigation-menu"
 
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+ 
 } from "@/components/ui/carousel"
 
 
